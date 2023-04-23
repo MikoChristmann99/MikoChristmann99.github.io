@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
-    <title >chrome easter egg: t-rex runner</title>
+    <title >Chrome Yoshi Egg: Yoshi runner</title>
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
     <script src="index.js"></script>
@@ -12,7 +12,7 @@
 
 <body id="t" class="offline">
     <div id="messageBox" class="sendmessage">
-         <h1 style="text-align: center;font-family: 'Open Sans', sans-serif;">Press Space to start</h1>
+         <h1 style="text-align: center;font-family: 'Open Sans', sans-serif;">Press Space to start running as Yoshi!</h1>
          <div class="niokbutton" onclick="okbuttonsend()"></div>
     </div>
     <div id="main-frame-error" class="interstitial-wrapper">
@@ -40,7 +40,7 @@
     }
 }
     document.onkeyup = function(aud) {
-        if(e.keyCode == 32){
+        if(aud.keyCode == 32){
         const audio = document.createElement('audioBox');
         audio.src = ('assets/music/Holding Out For A Hero [8 Bit Tribute to Bonnie Tyler] - 8 Bit Universe.mp3')
         audio.play();
