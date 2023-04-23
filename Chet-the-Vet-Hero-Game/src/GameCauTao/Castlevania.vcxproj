@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{28B2F97D-9DAE-4B2D-B50C-20F78D14C071}</ProjectGuid>
+    <RootNamespace>Castlevania</RootNamespace>
+    <ProjectName>GameCuaTao</ProjectName>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <IncludePath>Library\directx\Include;Library\freetype\Include;Library\fmt\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>Library\directx\Lib;Library\freetype\Lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>Library\directx\Include;Library\freetype\Include;Library\fmt\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>Library\directx\Lib;Library\freetype\Lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LibraryPath>Library\directx\Include;$(IncludePath)</LibraryPath>
+    <IncludePath>Library\directx\Lib;$(LibraryPath)</IncludePath>
+    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <ReferencePath>$(VC_ReferencesPath_x86);</ReferencePath>
+    <ExcludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(FxCopDir);$(MSBuild_ExecutablePath);$(VC_LibraryPath_x86);$(SystemRoot)</ExcludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>SDK Path\Include;.</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <!-- <PreprocessorDefinitions>_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions> -->
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>freetype.lib;d3d9.lib;d3dx9.lib;dinput8.lib;dxguid.lib;dsound.lib;dxerr.lib;winmm.lib;%(AdditionalDependencies);legacy_stdio_definitions.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>SDK Path\Include</AdditionalLibraryDirectories>
+      <SubSystem>
+      </SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>XCOPY "$(ProjectDir)library\freetype\lib\freetype.dll" "$(TargetDir)" /D /K /Y
+XCOPY "$(ProjectDir)Castlevania\Content" "$(TargetDir)Castlevania\Content" /D /E /I /K /Y</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy DLLs and asset files to Target Directory</Message>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <!-- <Command>#$(ProjectDir)Deployment\cppclean.sh</Command> -->
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>
+      </ConformanceMode>
+      <AdditionalIncludeDirectories>.</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <OmitFramePointers>
+      </OmitFramePointers>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;dinput8.lib;dxguid.lib;dsound.lib;dxerr.lib;winmm.lib;%(AdditionalDependencies);legacy_stdio_definitions.lib</AdditionalDependencies>
+      <SubSystem>
+      </SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <!-- <ConformanceMode>true</ConformanceMode> -->
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>SDK Path\Include;.</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>freetype.lib;d3d9.lib;d3dx9.lib;dinput8.lib;dxguid.lib;dsound.lib;dxerr.lib;winmm.lib;%(AdditionalDependencies);legacy_stdio_definitions.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>SDK Path\Include</AdditionalLibraryDirectories>
+      <SubSystem>
+      </SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Castlevania\CastlevaniaGame.cpp" />
+    <ClCompile Include="Castlevania\Effects\BigFlameEffect.cpp" />
+    <ClCompile Include="Castlevania\Effects\DebrisEffect.cpp" />
+    <ClCompile Include="Castlevania\Effects\FlameEffect.cpp" />
+    <ClCompile Include="Castlevania\Effects\FlashingMoneyTextEffect.cpp" />
+    <ClCompile Include="Castlevania\Effects\MoneyTextEffect.cpp" />
+    <ClCompile Include="Castlevania\Effects\SparkEffect.cpp" />
+    <ClCompile Include="Castlevania\Effects\WaterEffect.cpp" />
+    <ClCompile Include="Castlevania\Models\Areas\WaterArea.cpp" />
+    <ClCompile Include="Castlevania\Models\Areas\WaterAreaRenderingSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\Enemy.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\Fishman.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\FishmanControlSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\FishmanRenderingSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\FishmanResponseSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\GiantBat.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\GiantBatCollisionSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\GiantBatControlSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\GiantBatMovementSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\GiantBatRenderingSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\GiantBatResponseSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\Panther.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\PantherControlSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\PantherRenderingSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\PantherCollisionSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\PantherResponseSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\VampireBat.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\VampireBatRenderingSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\Zombie.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Enemies\ZombieResponseSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Player\Player.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Player\PlayerCollisionSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Facing.cpp" />
+    <ClCompile Include="Castlevania\Models\Factories\ObjectFactory.cpp" />
+    <ClCompile Include="Castlevania\Hud.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Player\PlayerRenderingSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\GameObject.cpp" />
+    <ClCompile Include="Castlevania\Models\Health.cpp" />
+    <ClCompile Include="Castlevania\Models\Items\BreakableWall.cpp" />
+    <ClCompile Include="Castlevania\Models\Items\Door.cpp" />
+    <ClCompile Include="Castlevania\Models\Items\DoorRenderingSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Items\MoneyBag.cpp" />
+    <ClCompile Include="Castlevania\Models\PowerupGenerator.cpp" />
+    <ClCompile Include="Castlevania\Models\Systems\Rendering\ItemRenderingSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Items\Powerup.cpp" />
+    <ClCompile Include="Castlevania\Models\Items\PowerupResponseSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Spawners\FishmanSpawnArea.cpp" />
+    <ClCompile Include="Castlevania\Models\Spawners\SpawnArea.cpp" />
+    <ClCompile Include="Castlevania\Models\Spawners\SpawnAreaResponseSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Spawners\AreaCollisionSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Spawners\SpawnPoint.cpp" />
+    <ClCompile Include="Castlevania\Models\Spawners\VampireBatSpawnArea.cpp" />
+    <ClCompile Include="Castlevania\Models\Spawners\ZombieSpawnArea.cpp" />
+    <ClCompile Include="Castlevania\Models\Systems\CollisionResponse\ResponseSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Systems\Collision\SimpleCollisionSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Systems\Collision\StandardCollisionSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Systems\Control\ControlSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Systems\Movement\EntityMovementSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Systems\Movement\MovementSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Systems\Movement\WaveMovementSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Systems\Rendering\AnimationRenderingSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Systems\Rendering\BoundingboxRenderingSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Systems\Rendering\EntityRenderingSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Systems\Rendering\RenderingSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Systems\Rendering\SpriteRenderingSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Trigger.cpp" />
+    <ClCompile Include="Castlevania\Models\Weapons\HolyWater.cpp" />
+    <ClCompile Include="Castlevania\Models\Weapons\HolyWaterRenderingSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Weapons\HolyWaterResponseSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Weapons\PoisonResponseSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Weapons\RangedWeapon.cpp" />
+    <ClCompile Include="Castlevania\Models\Weapons\WeaponCollisionSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Weapons\WhipFlashingRenderingSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Weapons\WhipRenderingSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Weapons\WeaponResponseSystem.cpp" />
+    <ClCompile Include="Castlevania\Effects\EffectFactory.cpp" />
+    <ClCompile Include="Castlevania\Scenes\GameOverScene.cpp" />
+    <ClCompile Include="Castlevania\Scenes\Stages\BossFightCutscene.cpp" />
+    <ClCompile Include="Castlevania\Scenes\Stages\CrossCutscene.cpp" />
+    <ClCompile Include="Castlevania\Scenes\Stages\Cutscene.cpp" />
+    <ClCompile Include="Castlevania\Scenes\Stages\GameOverCutscene.cpp" />
+    <ClCompile Include="Castlevania\Scenes\Stages\GoToCastleCutScene.cpp" />
+    <ClCompile Include="Castlevania\Scenes\Stages\HiddenMoneyBagCutscene.cpp" />
+    <ClCompile Include="Castlevania\Scenes\Stages\IntroCutscene.cpp" />
+    <ClCompile Include="Castlevania\Scenes\Stages\LevelCompletedCutscene.cpp" />
+    <ClCompile Include="Castlevania\Scenes\Stages\ResetCutscene.cpp" />
+    <ClCompile Include="Castlevania\Scenes\Stages\NextMapCutscene.cpp" />
+    <ClCompile Include="Castlevania\Scenes\Stages\NextRoomCutscene.cpp" />
+    <ClCompile Include="Castlevania\Scenes\Stages\Stage.cpp" />
+    <ClCompile Include="Castlevania\Scenes\Stages\StopwatchCutscene.cpp" />
+    <ClCompile Include="Castlevania\Utilities\CollisionCell.cpp" />
+    <ClCompile Include="Castlevania\Utilities\CollisionGrid.cpp" />
+    <ClCompile Include="Direct2DGame\Graphics\Viewport.cpp" />
+    <ClCompile Include="Direct2DGame\Utilities\CppExtensions.cpp" />
+    <ClCompile Include="Castlevania\Utilities\Subject.cpp" />
+    <ClCompile Include="Castlevania\Utilities\Timer.cpp" />
+    <ClCompile Include="Direct2DGame\Base\Vector2.cpp" />
+    <ClCompile Include="Direct2DGame\Content\SpritesheetReader.cpp" />
+    <ClCompile Include="Direct2DGame\Extensions\Collisions\Body\Body.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Player\Controller.cpp" />
+    <ClCompile Include="Castlevania\Models\Items\Container.cpp" />
+    <ClCompile Include="Castlevania\Models\Systems\CollisionResponse\GroundResponseSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Systems\Collision\CollisionSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Player\PlayerMovementSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Systems\Movement\SimpleMovementSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Characters\Player\PlayerResponseSystem.cpp" />
+    <ClCompile Include="Castlevania\Models\Weapons\Whip.cpp" />
+    <ClCompile Include="Castlevania\Settings\Button.cpp" />
+    <ClCompile Include="Castlevania\Utilities\MapManager.cpp" />
+    <ClCompile Include="Direct2DGame\Base\Color.cpp" />
+    <ClCompile Include="Direct2DGame\Base\Rect.cpp" />
+    <ClCompile Include="Direct2DGame\Content\TiledMapReader.cpp" />
+    <ClCompile Include="Direct2DGame\Extensions\Animations\AnimatedSprite.cpp" />
+    <ClCompile Include="Direct2DGame\Extensions\Animations\AnimationFactory.cpp" />
+    <ClCompile Include="Direct2DGame\Content\AnimationFactoryReader.cpp" />
+    <ClCompile Include="Castlevania\Scenes\AbstractScene.cpp" />
+    <ClCompile Include="Castlevania\Scenes\GameplayScene.cpp" />
+    <ClCompile Include="Castlevania\Scenes\MenuScene.cpp" />
+    <ClCompile Include="Castlevania\Scenes\SceneManager.cpp" />
+    <ClCompile Include="Castlevania\Utilities\AudioManager.cpp" />
+    <ClCompile Include="Direct2DGame\Content\DictionaryReader.cpp" />
+    <ClCompile Include="Direct2DGame\Extensions\Animations\Animation.cpp" />
+    <ClCompile Include="Direct2DGame\Extensions\Animations\AnimationFrame.cpp" />
+    <ClCompile Include="Direct2DGame\Extensions\Camera.cpp" />
+    <ClCompile Include="Direct2DGame\Extensions\Direction.cpp" />
+    <ClCompile Include="Direct2DGame\Extensions\RectF.cpp" />
+    <ClCompile Include="Direct2DGame\Extensions\Sprites\Sprite.cpp" />
+    <ClCompile Include="Direct2DGame\Extensions\Sprites\SpriteExtensions.cpp" />
+    <ClCompile Include="Direct2DGame\Extensions\TextureRegion.cpp" />
+    <ClCompile Include="Direct2DGame\Extensions\Tiled\Tile.cpp" />
+    <ClCompile Include="Direct2DGame\Extensions\Tiled\TiledMap.cpp" />
+    <ClCompile Include="Direct2DGame\Graphics\SpriteBatch.cpp" />
+    <ClCompile Include="Direct2DGame\Input\DirectInput.cpp" />
+    <ClCompile Include="Direct2DGame\Input\GameInput.cpp" />
+    <ClCompile Include="Direct2DGame\Input\InputHelper.cpp" />
+    <ClCompile Include="Direct2DGame\Input\KeyboardState.cpp" />
+    <ClCompile Include="Direct2DGame\Input\Mouse.cpp" />
+    <ClCompile Include="Direct2DGame\Input\MouseState.cpp" />
+    <ClCompile Include="Direct2DGame\MathHelper.cpp" />
+    <ClCompile Include="Castlevania\Utilities\DevTool.cpp" />
+    <ClCompile Include="Direct2DGame\Utilities\Stopwatch.cpp" />
+    <ClCompile Include="Direct2DGame\Utilities\TimeSpan.cpp" />
+    <ClCompile Include="MarioSample\Models\MarioController.cpp" />
+    <ClCompile Include="MarioSample\Utilities\AudioManager.cpp" />
+    <ClCompile Include="Direct2DGame\Graphics\SpriteFont.cpp" />
+    <ClCompile Include="Direct2DGame\Graphics\Texture.cpp" />
+    <ClCompile Include="Direct2DGame\Content\ContentManager.cpp" />
+    <ClCompile Include="Direct2DGame\Content\ContentReader.cpp" />
+    <ClCompile Include="Direct2DGame\Content\SoundReader.cpp" />
+    <ClCompile Include="Direct2DGame\Content\SpriteFontReader.cpp" />
+    <ClCompile Include="Direct2DGame\Content\TextureReader.cpp" />
+    <ClCompile Include="Direct2DGame\Game.cpp" />
+    <ClCompile Include="Direct2DGame\GameWindow.cpp" />
+    <ClCompile Include="Direct2DGame\Graphics\GraphicsDevice.cpp" />
+    <ClCompile Include="Direct2DGame\GraphicsDeviceManager.cpp" />
+    <ClCompile Include="Direct2DGame\Input\Keyboard.cpp" />
+    <ClCompile Include="Direct2DGame\Utilities\FontHelper.cpp" />
+    <ClCompile Include="Library\directx\DSUtil.cpp" />
+    <ClCompile Include="Library\directx\DXUtil.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MarioSample\Models\GameObject.cpp" />
+    <ClCompile Include="MarioSample\Models\Mario.cpp" />
+    <ClCompile Include="MarioSample\MarioSampleGame.cpp" />
+    <ClCompile Include="Direct2DGame\Utilities\FileLogger.cpp" />
+    <ClCompile Include="Direct2DGame\Utilities\WinHelper.cpp" />
+    <ClCompile Include="Library\pugixml\pugixml.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Castlevania\CastlevaniaGame.h" />
+    <ClInclude Include="Castlevania\Effects\BigFlameEffect.h" />
+    <ClInclude Include="Castlevania\Effects\DebrisEffect.h" />
+    <ClInclude Include="Castlevania\Effects\FlameEffect.h" />
+    <ClInclude Include="Castlevania\Effects\FlashingMoneyTextEffect.h" />
+    <ClInclude Include="Castlevania\Effects\MoneyTextEffect.h" />
+    <ClInclude Include="Castlevania\Effects\SparkEffect.h" />
+    <ClInclude Include="Castlevania\Effects\WaterEffect.h" />
+    <ClInclude Include="Castlevania\Models\Areas\WaterArea.h" />
+    <ClInclude Include="Castlevania\Models\Areas\WaterAreaRenderingSystem.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\Enemy.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\Fishman.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\FishmanControlSystem.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\FishmanRenderingSystem.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\FishmanResponseSystem.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\GiantBat.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\GiantBatCollisionSystem.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\GiantBatControlSystem.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\GiantBatMovementSystem.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\GiantBatRenderingSystem.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\GiantBatResponseSystem.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\Panther.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\PantherControlSystem.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\PantherRenderingSystem.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\PantherCollisionSystem.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\PantherResponseSystem.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\VampireBat.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\VampireBatRenderingSystem.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\Zombie.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Enemies\ZombieResponseSystem.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Player\NearbyObjects.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Player\Player.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Player\PlayerCollisionSystem.h" />
+    <ClInclude Include="Castlevania\Models\Facing.h" />
+    <ClInclude Include="Castlevania\Models\Factories\ObjectCollection.h" />
+    <ClInclude Include="Castlevania\Models\Factories\ObjectFactory.h" />
+    <ClInclude Include="Castlevania\Hud.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Player\PlayerData.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Player\PlayerRenderingSystem.h" />
+    <ClInclude Include="Castlevania\Models\GameObject.h" />
+    <ClInclude Include="Castlevania\Models\Health.h" />
+    <ClInclude Include="Castlevania\Models\IBoss.h" />
+    <ClInclude Include="Castlevania\Models\Items\BreakableWall.h" />
+    <ClInclude Include="Castlevania\Models\Items\Door.h" />
+    <ClInclude Include="Castlevania\Models\Items\DoorRenderingSystem.h" />
+    <ClInclude Include="Castlevania\Models\IAttackable.h" />
+    <ClInclude Include="Castlevania\Models\Items\MoneyBag.h" />
+    <ClInclude Include="Castlevania\Models\Checkpoint.h" />
+    <ClInclude Include="Castlevania\Models\PowerupGenerator.h" />
+    <ClInclude Include="Castlevania\Models\Systems\Rendering\ItemRenderingSystem.h" />
+    <ClInclude Include="Castlevania\Models\Items\PowerupResponseSystem.h" />
+    <ClInclude Include="Castlevania\Models\Settings.h" />
+    <ClInclude Include="Castlevania\Models\Items\Powerup.h" />
+    <ClInclude Include="Castlevania\Models\Spawners\FishmanSpawnArea.h" />
+    <ClInclude Include="Castlevania\Models\Spawners\ISpawner.h" />
+    <ClInclude Include="Castlevania\Models\Spawners\SpawnArea.h" />
+    <ClInclude Include="Castlevania\Models\Spawners\SpawnAreaResponseSystem.h" />
+    <ClInclude Include="Castlevania\Models\Spawners\AreaCollisionSystem.h" />
+    <ClInclude Include="Castlevania\Models\Spawners\SpawnPoint.h" />
+    <ClInclude Include="Castlevania\Models\Spawners\VampireBatSpawnArea.h" />
+    <ClInclude Include="Castlevania\Models\Spawners\ZombieSpawnArea.h" />
+    <ClInclude Include="Castlevania\Models\Systems\CollisionResponse\ResponseSystem.h" />
+    <ClInclude Include="Castlevania\Models\Systems\Collision\SimpleCollisionSystem.h" />
+    <ClInclude Include="Castlevania\Models\Systems\Collision\StandardCollisionSystem.h" />
+    <ClInclude Include="Castlevania\Models\Systems\Control\ControlSystem.h" />
+    <ClInclude Include="Castlevania\Models\Systems\Control\IControlSystem.h" />
+    <ClInclude Include="Castlevania\Models\Systems\IReceiver.h" />
+    <ClInclude Include="Castlevania\Models\Systems\Movement\EntityMovementSystem.h" />
+    <ClInclude Include="Castlevania\Models\Systems\Movement\MovementSystem.h" />
+    <ClInclude Include="Castlevania\Models\Systems\Movement\WaveMovementSystem.h" />
+    <ClInclude Include="Castlevania\Models\Systems\Rendering\BoundingboxRenderingSystem.h" />
+    <ClInclude Include="Castlevania\Models\Systems\Rendering\EntityRenderingSystem.h" />
+    <ClInclude Include="Castlevania\Models\Systems\Rendering\IRenderingSystem.h" />
+    <ClInclude Include="Castlevania\Models\Systems\Rendering\AnimationRenderingSystem.h" />
+    <ClInclude Include="Castlevania\Models\Systems\Rendering\RenderingSystem.h" />
+    <ClInclude Include="Castlevania\Models\Systems\Rendering\SpriteRenderingSystem.h" />
+    <ClInclude Include="Castlevania\Models\Trigger.h" />
+    <ClInclude Include="Castlevania\Models\TriggerType.h" />
+    <ClInclude Include="Castlevania\Models\UpdateData.h" />
+    <ClInclude Include="Castlevania\Models\Weapons\HolyWater.h" />
+    <ClInclude Include="Castlevania\Models\Weapons\HolyWaterRenderingSystem.h" />
+    <ClInclude Include="Castlevania\Models\Weapons\HolyWaterResponseSystem.h" />
+    <ClInclude Include="Castlevania\Models\Weapons\PoisonResponseSystem.h" />
+    <ClInclude Include="Castlevania\Models\Weapons\RangedWeapon.h" />
+    <ClInclude Include="Castlevania\Models\Weapons\WeaponCollisionSystem.h" />
+    <ClInclude Include="Castlevania\Models\Weapons\WhipFlashingRenderingSystem.h" />
+    <ClInclude Include="Castlevania\Models\Weapons\WhipRenderingSystem.h" />
+    <ClInclude Include="Castlevania\Models\Weapons\WeaponResponseSystem.h" />
+    <ClInclude Include="Castlevania\Effects\EffectFactory.h" />
+    <ClInclude Include="Castlevania\Effects\IEffect.h" />
+    <ClInclude Include="Castlevania\Scenes\GameOverScene.h" />
+    <ClInclude Include="Castlevania\Scenes\GameplayData.h" />
+    <ClInclude Include="Castlevania\Scenes\Stages\BossFightCutscene.h" />
+    <ClInclude Include="Castlevania\Scenes\Stages\CrossCutscene.h" />
+    <ClInclude Include="Castlevania\Scenes\Stages\GameOverCutscene.h" />
+    <ClInclude Include="Castlevania\Scenes\Stages\GoToCastleCutScene.h" />
+    <ClInclude Include="Castlevania\Scenes\Stages\Cutscene.h" />
+    <ClInclude Include="Castlevania\Scenes\Stages\HiddenMoneyBagCutscene.h" />
+    <ClInclude Include="Castlevania\Scenes\Stages\IntroCutscene.h" />
+    <ClInclude Include="Castlevania\Scenes\Stages\ResetCutscene.h" />
+    <ClInclude Include="Castlevania\Scenes\Stages\NextMapCutscene.h" />
+    <ClInclude Include="Castlevania\Scenes\Stages\NextRoomCutscene.h" />
+    <ClInclude Include="Castlevania\Scenes\Stages\RespawnPoint.h" />
+    <ClInclude Include="Castlevania\Scenes\Stages\LevelCompletedCutscene.h" />
+    <ClInclude Include="Castlevania\Scenes\Stages\StageEvent.h" />
+    <ClInclude Include="Castlevania\Scenes\Stages\Stage.h" />
+    <ClInclude Include="Castlevania\Scenes\Stages\StopwatchCutscene.h" />
+    <ClInclude Include="Castlevania\Utilities\CollisionGrid.h" />
+    <ClInclude Include="Castlevania\Utilities\CollisionCell.h" />
+    <ClInclude Include="Castlevania\Utilities\CollisionGridData.h" />
+    <ClInclude Include="Direct2DGame\Utilities\CppExtensions.h" />
+    <ClInclude Include="Castlevania\Utilities\CollisionObject.h" />
+    <ClInclude Include="Castlevania\Utilities\IObserver.h" />
+    <ClInclude Include="Castlevania\Utilities\MapSettings.h" />
+    <ClInclude Include="Castlevania\Scenes\Stages\StageObject.h" />
+    <ClInclude Include="Castlevania\Utilities\Subject.h" />
+    <ClInclude Include="Castlevania\Utilities\Timer.h" />
+    <ClInclude Include="Castlevania\Utilities\TypeConverter.h" />
+    <ClInclude Include="Direct2DGame\Content\SpritesheetReader.h" />
+    <ClInclude Include="Direct2DGame\Extensions\Collisions\Body\Body.h" />
+    <ClInclude Include="Direct2DGame\Extensions\Collisions\Body\BoxCollisionResult.h" />
+    <ClInclude Include="Direct2DGame\Extensions\Collisions\Body\CollisionData.h" />
+    <ClInclude Include="Direct2DGame\Extensions\Collisions\Body\CollisionResult.h" />
+    <ClInclude Include="Direct2DGame\Extensions\Direction.h" />
+    <ClInclude Include="Direct2DGame\Extensions\Collisions\IColliable.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Player\Controller.h" />
+    <ClInclude Include="Castlevania\Models\ObjectId.h" />
+    <ClInclude Include="Castlevania\Models\IGameObject.h" />
+    <ClInclude Include="Castlevania\Models\Items\Container.h" />
+    <ClInclude Include="Castlevania\Models\Systems\CollisionResponse\GroundResponseSystem.h" />
+    <ClInclude Include="Castlevania\Models\Systems\Collision\CollisionSystem.h" />
+    <ClInclude Include="Castlevania\Models\Systems\CollisionResponse\ICollisionResponseSystem.h" />
+    <ClInclude Include="Castlevania\Models\Systems\Collision\ICollisionSystem.h" />
+    <ClInclude Include="Castlevania\Models\Systems\Movement\IMovementSystem.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Player\PlayerMovementSystem.h" />
+    <ClInclude Include="Castlevania\Models\Systems\Movement\SimpleMovementSystem.h" />
+    <ClInclude Include="Castlevania\Models\Characters\Player\PlayerResponseSystem.h" />
+    <ClInclude Include="Castlevania\Models\Weapons\Whip.h" />
+    <ClInclude Include="Castlevania\Settings\Button.h" />
+    <ClInclude Include="Castlevania\Utilities\MapManager.h" />
+    <ClInclude Include="Direct2DGame\Content\TiledMapReader.h" />
+    <ClInclude Include="Direct2DGame\Extensions\Animations\AnimatedSprite.h" />
+    <ClInclude Include="Direct2DGame\Extensions\Animations\AnimationFactory.h" />
+    <ClInclude Include="Direct2DGame\Content\AnimationFactoryReader.h" />
+    <ClInclude Include="Castlevania\Settings\Animations.h" />
+    <ClInclude Include="Castlevania\Scenes\AbstractScene.h" />
+    <ClInclude Include="Castlevania\Scenes\GameplayScene.h" />
+    <ClInclude Include="Castlevania\Scenes\MenuScene.h" />
+    <ClInclude Include="Castlevania\Scenes\Scene.h" />
+    <ClInclude Include="Castlevania\Scenes\SceneManager.h" />
+    <ClInclude Include="Castlevania\Settings\Audios.h" />
+    <ClInclude Include="Castlevania\Utilities\AudioManager.h" />
+    <ClInclude Include="Direct2DGame\Extensions\Animations\Animation.h" />
+    <ClInclude Include="Direct2DGame\Extensions\Animations\AnimationFrame.h" />
+    <ClInclude Include="Direct2DGame\Base\Color.h" />
+    <ClInclude Include="Direct2DGame\Base\Point.h" />
+    <ClInclude Include="Direct2DGame\Base\Vector3.h" />
+    <ClInclude Include="Direct2DGame\Content\DictionaryReader.h" />
+    <ClInclude Include="Direct2DGame\Extensions\Camera.h" />
+    <ClInclude Include="Direct2DGame\Extensions\RectF.h" />
+    <ClInclude Include="Direct2DGame\Extensions\Sprites\IDrawable.h" />
+    <ClInclude Include="Direct2DGame\Extensions\TextureRegion.h" />
+    <ClInclude Include="Direct2DGame\Extensions\Tiled\Tile.h" />
+    <ClInclude Include="Direct2DGame\Extensions\Tiled\TiledMap.h" />
+    <ClInclude Include="Direct2DGame\Input\DirectInput.h" />
+    <ClInclude Include="Direct2DGame\GameTime.h" />
+    <ClInclude Include="Direct2DGame\GraphicsDeviceInformation.h" />
+    <ClInclude Include="Direct2DGame\Graphics\DeviceDriverType.h" />
+    <ClInclude Include="Direct2DGame\Graphics\FontDescription.h" />
+    <ClInclude Include="Direct2DGame\Graphics\FontStyle.h" />
+    <ClInclude Include="Direct2DGame\Graphics\SpriteBatch.h" />
+    <ClInclude Include="Direct2DGame\Graphics\Viewport.h" />
+    <ClInclude Include="Direct2DGame\Input\GameInput.h" />
+    <ClInclude Include="Direct2DGame\Input\IController.h" />
+    <ClInclude Include="Direct2DGame\Input\InputHelper.h" />
+    <ClInclude Include="Direct2DGame\Input\KeyboardState.h" />
+    <ClInclude Include="Direct2DGame\Input\Mouse.h" />
+    <ClInclude Include="Direct2DGame\Input\MouseState.h" />
+    <ClInclude Include="Direct2DGame\IUpdateable.h" />
+    <ClInclude Include="Direct2DGame\MathHelper.h" />
+    <ClInclude Include="Direct2DGame\Extensions\Sprites\SpriteExtensions.h" />
+    <ClInclude Include="Castlevania\Utilities\DevTool.h" />
+    <ClInclude Include="Direct2DGame\Utilities\Stopwatch.h" />
+    <ClInclude Include="Direct2DGame\Utilities\TimeSpan.h" />
+    <ClInclude Include="MarioSample\Models\MarioController.h" />
+    <ClInclude Include="MarioSample\Utilities\AudioManager.h" />
+    <ClInclude Include="Direct2DGame\Graphics\SpriteFont.h" />
+    <ClInclude Include="Direct2DGame\Graphics\Texture.h" />
+    <ClInclude Include="Direct2DGame\Content\SoundReader.h" />
+    <ClInclude Include="Direct2DGame\Content\SpriteFontReader.h" />
+    <ClInclude Include="Direct2DGame\Direct3D9.h" />
+    <ClInclude Include="Direct2DGame\Graphics\SpriteEffects.h" />
+    <ClInclude Include="Direct2DGame\Utilities\FontHelper.h" />
+    <ClInclude Include="Library\directx\DSUtil.h" />
+    <ClInclude Include="Library\directx\DXUtil.h" />
+    <ClInclude Include="MarioSample\Models\MarioSettings.h" />
+    <ClInclude Include="Direct2DGame\Extensions\Sprites\Sprite.h" />
+    <ClInclude Include="Direct2DGame\Base\Rect.h" />
+    <ClInclude Include="Direct2DGame\Base\Vector2.h" />
+    <ClInclude Include="Direct2DGame\Content\AbstractReader.h" />
+    <ClInclude Include="Direct2DGame\Content\ContentManager.h" />
+    <ClInclude Include="Direct2DGame\Content\ContentReader.h" />
+    <ClInclude Include="Direct2DGame\Content\LoadContentException.h" />
+    <ClInclude Include="Direct2DGame\Content\TextureReader.h" />
+    <ClInclude Include="Direct2DGame\Game.h" />
+    <ClInclude Include="Direct2DGame\GameWindow.h" />
+    <ClInclude Include="Direct2DGame\Graphics\GraphicsDevice.h" />
+    <ClInclude Include="Direct2DGame\GraphicsDeviceManager.h" />
+    <ClInclude Include="Direct2DGame\Input\Keyboard.h" />
+    <ClInclude Include="MarioSample\Models\GameObject.h" />
+    <ClInclude Include="MarioSample\Models\Mario.h" />
+    <ClInclude Include="MarioSample\MarioSampleGame.h" />
+    <ClInclude Include="Library\pugiconfig.hpp" />
+    <ClInclude Include="Library\pugixml.hpp" />
+    <ClInclude Include="Direct2DGame\ServiceProvider.h" />
+    <ClInclude Include="Direct2DGame\Utilities\FileLogger.h" />
+    <ClInclude Include="Direct2DGame\Utilities\WinHelper.h" />
+    <ClInclude Include="Library\pugixml\pugiconfig.hpp" />
+    <ClInclude Include="Library\pugixml\pugixml.hpp" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GameCuaTao.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Icon.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
