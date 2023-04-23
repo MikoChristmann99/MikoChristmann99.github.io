@@ -12,7 +12,7 @@
 
 <body id="t" class="offline">
     <div id="messageBox" class="sendmessage">
-         <h1 style="text-align: center;font-family: 'Open Sans', sans-serif;">Press Space to start running as Yoshi!</h1>
+         <h1 style="text-align: center;font-family: 'Open Sans', sans-serif;">Press Enter to start running as Yoshi!</h1>
          <div class="niokbutton" onclick="okbuttonsend()"></div>
     </div>
     <div id="main-frame-error" class="interstitial-wrapper">
@@ -34,14 +34,14 @@
 <script>
     document.onkeydown = function(evt) {
     evt = evt || window.event;
-    if (evt.keyCode == 32) {
+    if (evt.keyCode == 13) {
         var box = document.getElementById("messageBox");
         box.style.visibility="hidden";
     }
 }
     document.onkeyup = function(aud) {
         aud = aud || window.event;
-        if(aud.keyCode == 32){
+        if(aud.keyCode == 13){
         const audio = new Audio('assets/music/Holding Out For A Hero [8 Bit Tribute to Bonnie Tyler] - 8 Bit Universe.mp3')
         audio.play();
         audio.loop = true;
