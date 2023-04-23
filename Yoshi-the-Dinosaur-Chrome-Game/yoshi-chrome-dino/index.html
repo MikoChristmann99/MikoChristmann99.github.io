@@ -42,10 +42,9 @@
     document.onkeyup = function(aud) {
         aud = aud || window.event;
         if(aud.keyCode == 32){
-        const audio = document.querySelector('#audioBox');
-        audio.src = ('assets/music/Holding Out For A Hero [8 Bit Tribute to Bonnie Tyler] - 8 Bit Universe.mp3')
+        const audio = new Audio('assets/music/Holding Out For A Hero [8 Bit Tribute to Bonnie Tyler] - 8 Bit Universe.mp3')
         audio.play();
-        document.querySelector("#audioBox").loop = true;
+        audio.loop = true;
     }
 };
 </script>
