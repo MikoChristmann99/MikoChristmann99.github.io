@@ -41,10 +41,10 @@
 }
     document.onkeyup = function(aud) {
         if(aud.keyCode == 32){
-        const audio = document.createElement('audioBox');
+        const audio = document.querySelector('#audioBox');
         audio.src = ('assets/music/Holding Out For A Hero [8 Bit Tribute to Bonnie Tyler] - 8 Bit Universe.mp3')
         audio.play();
-        document.getElementById("audioBox").loop = true;
+        document.querySelector("#audioBox").loop = true;
     }
 };
 </script>
